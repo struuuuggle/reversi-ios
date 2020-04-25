@@ -89,6 +89,15 @@
 			name = Env;
 			sourceTree = "<group>";
 		};
+		155CBE242453FEC300EF6205 /* Applications */ = {
+			isa = PBXGroup;
+			children = (
+				D642BDB323A9FE4500396732 /* AppDelegate.swift */,
+				D642BDB523A9FE4500396732 /* SceneDelegate.swift */,
+			);
+			path = Applications;
+			sourceTree = "<group>";
+		};
 		D636B3A123D43203007F370F /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,9 +141,8 @@
 		D642BDB223A9FE4500396732 /* Reversi */ = {
 			isa = PBXGroup;
 			children = (
+				155CBE242453FEC300EF6205 /* Applications */,
 				155CBE1F2453FE1B00EF6205 /* Env */,
-				D642BDB323A9FE4500396732 /* AppDelegate.swift */,
-				D642BDB523A9FE4500396732 /* SceneDelegate.swift */,
 				D642BDB723A9FE4500396732 /* ViewController.swift */,
 				D642BDB923A9FE4500396732 /* Main.storyboard */,
 				D642BDBC23A9FE4700396732 /* Assets.xcassets */,
