@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		151FBD262454503A00BF77AB /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 151FBD252454503A00BF77AB /* ReSwift.framework */; };
+		151FBD272454503A00BF77AB /* ReSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 151FBD252454503A00BF77AB /* ReSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		155CBE272453FF2D00EF6205 /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155CBE262453FF2D00EF6205 /* Env.swift */; };
 		155CBE282453FF2D00EF6205 /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155CBE262453FF2D00EF6205 /* Env.swift */; };
 		155CBE2E2453FF8F00EF6205 /* FileIOError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155CBE2A2453FF8F00EF6205 /* FileIOError.swift */; };
@@ -47,7 +49,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		151FBD282454503A00BF77AB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				151FBD272454503A00BF77AB /* ReSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		151FBD252454503A00BF77AB /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/iOS/ReSwift.framework; sourceTree = "<group>"; };
 		155CBE262453FF2D00EF6205 /* Env.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Env.swift; sourceTree = "<group>"; };
 		155CBE2A2453FF8F00EF6205 /* FileIOError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileIOError.swift; sourceTree = "<group>"; };
 		155CBE2B2453FF8F00EF6205 /* Disk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disk.swift; sourceTree = "<group>"; };
@@ -78,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				151FBD262454503A00BF77AB /* ReSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +109,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		151FBD242454503A00BF77AB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				151FBD252454503A00BF77AB /* ReSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		155CBE242453FEC300EF6205 /* Applications */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +172,7 @@
 				D642BDB223A9FE4500396732 /* Reversi */,
 				D642BDC923A9FE4700396732 /* ReversiTests */,
 				D642BDB123A9FE4500396732 /* Products */,
+				151FBD242454503A00BF77AB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -194,6 +221,8 @@
 				D642BDAC23A9FE4500396732 /* Sources */,
 				D642BDAD23A9FE4500396732 /* Frameworks */,
 				D642BDAE23A9FE4500396732 /* Resources */,
+				151FBD282454503A00BF77AB /* Embed Frameworks */,
+				151FBD292454504C00BF77AB /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -279,6 +308,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		151FBD292454504C00BF77AB /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/ReSwift.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D642BDAC23A9FE4500396732 /* Sources */ = {
@@ -467,6 +518,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Reversi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -484,6 +539,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Reversi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
