@@ -14,7 +14,7 @@ enum GameReducer {
         guard let action = action as? GameAction else { return state }
 
         switch action {
-        case .save:
+        case .saveGame:
             break
         case .load:
             break
