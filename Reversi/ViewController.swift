@@ -513,9 +513,3 @@ final class Canceller {
         body?()
     }
 }
-
-struct DiskPlacementError: Error {
-    let disk: Disk
-    let x: Int
-    let y: Int
-}
