@@ -1,6 +1,6 @@
 import UIKit
 
-public enum Disk {
+enum Disk: String {
     case dark
     case light
 }
@@ -9,12 +9,12 @@ extension Disk: Hashable {}
 
 extension Disk {
     /// `Disk` のすべての値を列挙した `Array` 、 `[.dark, .light]` を返します。
-    public static var sides: [Disk] {
+    static var sides: [Disk] {
         [.dark, .light]
     }
     
     /// 自身の値を反転させた値（ `.dark` なら `.light` 、 `.light` なら `.dark` ）を返します。
-    public var flipped: Disk {
+    var flipped: Disk {
         switch self {
         case .dark: return .light
         case .light: return .dark
@@ -22,20 +22,17 @@ extension Disk {
     }
     
     /// 自身の値を、現在の値が `.dark` なら `.light` に、 `.light` なら `.dark` に反転させます。
-    public mutating func flip() {
+    mutating func flip() {
         self = flipped
     }
 }
 
 extension Disk {
     init(index: Int) {
-        for side in Disk.sides {
-            if index == side.index {
-                self = side
-                return
-            }
+        guard let side = Disk.sides.filter({ $0.index == index }).first else {
+            preconditionFailure("Illegal index: \(index)")
         }
-        preconditionFailure("Illegal index: \(index)")
+        self = side
     }
 
     var index: Int {
@@ -72,7 +69,6 @@ extension Optional where Wrapped == Disk {
     }
 }
 
-
 extension Disk {
     var uiColor: UIColor {
         switch self {
@@ -86,10 +82,7 @@ extension Disk {
     }
 
     var name: String {
-        switch self {
-        case .dark: return "dark"
-        case .light: return "light"
-        }
+        self.rawValue
     }
 
     init(name: String) {
@@ -103,4 +96,3 @@ extension Disk {
         }
     }
 }
-
