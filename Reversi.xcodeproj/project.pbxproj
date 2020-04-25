@@ -22,6 +22,8 @@
 		155CBE47245402B300EF6205 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155CBE44245402B300EF6205 /* BoardView.swift */; };
 		155CBE48245402B300EF6205 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155CBE45245402B300EF6205 /* CellView.swift */; };
 		155CBE49245402B300EF6205 /* DiskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155CBE46245402B300EF6205 /* DiskView.swift */; };
+		15F63FCD2454103F00FD5554 /* Reversi+DiskCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F63FCC2454103F00FD5554 /* Reversi+DiskCounter.swift */; };
+		15F63FCE2454103F00FD5554 /* Reversi+DiskCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F63FCC2454103F00FD5554 /* Reversi+DiskCounter.swift */; };
 		D642BDB423A9FE4500396732 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D642BDB323A9FE4500396732 /* AppDelegate.swift */; };
 		D642BDB623A9FE4500396732 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D642BDB523A9FE4500396732 /* SceneDelegate.swift */; };
 		D642BDB823A9FE4500396732 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D642BDB723A9FE4500396732 /* ViewController.swift */; };
@@ -51,6 +53,7 @@
 		155CBE44245402B300EF6205 /* BoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		155CBE45245402B300EF6205 /* CellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		155CBE46245402B300EF6205 /* DiskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiskView.swift; sourceTree = "<group>"; };
+		15F63FCC2454103F00FD5554 /* Reversi+DiskCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reversi+DiskCounter.swift"; sourceTree = "<group>"; };
 		D642BDB023A9FE4500396732 /* Reversi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reversi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D642BDB323A9FE4500396732 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D642BDB523A9FE4500396732 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +124,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		15F63FCB2454103F00FD5554 /* Reversi */ = {
+			isa = PBXGroup;
+			children = (
+				15F63FCC2454103F00FD5554 /* Reversi+DiskCounter.swift */,
+			);
+			path = Reversi;
+			sourceTree = "<group>";
+		};
 		D642BDA723A9FE4500396732 = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +156,7 @@
 				155CBE242453FEC300EF6205 /* Applications */,
 				155CBE292453FF8F00EF6205 /* DataTypes */,
 				155CBE252453FF2D00EF6205 /* Env */,
+				15F63FCB2454103F00FD5554 /* Reversi */,
 				155CBE43245402B300EF6205 /* Views */,
 				D642BDB723A9FE4500396732 /* ViewController.swift */,
 				D642BDB923A9FE4500396732 /* Main.storyboard */,
@@ -275,6 +287,7 @@
 				155CBE49245402B300EF6205 /* DiskView.swift in Sources */,
 				155CBE322453FF8F00EF6205 /* DiskPlacementError.swift in Sources */,
 				155CBE47245402B300EF6205 /* BoardView.swift in Sources */,
+				15F63FCD2454103F00FD5554 /* Reversi+DiskCounter.swift in Sources */,
 				155CBE2E2453FF8F00EF6205 /* FileIOError.swift in Sources */,
 				D642BDB623A9FE4500396732 /* SceneDelegate.swift in Sources */,
 			);
@@ -286,6 +299,7 @@
 			files = (
 				155CBE312453FF8F00EF6205 /* Disk.swift in Sources */,
 				155CBE2F2453FF8F00EF6205 /* FileIOError.swift in Sources */,
+				15F63FCE2454103F00FD5554 /* Reversi+DiskCounter.swift in Sources */,
 				155CBE332453FF8F00EF6205 /* DiskPlacementError.swift in Sources */,
 				D642BDCB23A9FE4700396732 /* ReversiTests.swift in Sources */,
 				155CBE352453FF8F00EF6205 /* Player.swift in Sources */,
