@@ -11,6 +11,8 @@
 		155CBE152453FD0900EF6205 /* FileIOError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155CBE132453FD0900EF6205 /* FileIOError.swift */; };
 		155CBE172453FD7600EF6205 /* DiskPlacementError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155CBE162453FD7600EF6205 /* DiskPlacementError.swift */; };
 		155CBE182453FD7600EF6205 /* DiskPlacementError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155CBE162453FD7600EF6205 /* DiskPlacementError.swift */; };
+		155CBE1A2453FDA700EF6205 /* Canceller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155CBE192453FDA700EF6205 /* Canceller.swift */; };
+		155CBE1B2453FDA700EF6205 /* Canceller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155CBE192453FDA700EF6205 /* Canceller.swift */; };
 		D636B39F23D35043007F370F /* DiskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D636B39E23D35043007F370F /* DiskView.swift */; };
 		D642BDB423A9FE4500396732 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D642BDB323A9FE4500396732 /* AppDelegate.swift */; };
 		D642BDB623A9FE4500396732 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D642BDB523A9FE4500396732 /* SceneDelegate.swift */; };
@@ -37,6 +39,7 @@
 /* Begin PBXFileReference section */
 		155CBE132453FD0900EF6205 /* FileIOError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileIOError.swift; sourceTree = "<group>"; };
 		155CBE162453FD7600EF6205 /* DiskPlacementError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskPlacementError.swift; sourceTree = "<group>"; };
+		155CBE192453FDA700EF6205 /* Canceller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canceller.swift; sourceTree = "<group>"; };
 		D636B39E23D35043007F370F /* DiskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskView.swift; sourceTree = "<group>"; };
 		D642BDB023A9FE4500396732 /* Reversi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reversi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D642BDB323A9FE4500396732 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +91,7 @@
 				155CBE132453FD0900EF6205 /* FileIOError.swift */,
 				D642BDD723AA0B5700396732 /* Disk.swift */,
 				155CBE162453FD7600EF6205 /* DiskPlacementError.swift */,
+				155CBE192453FDA700EF6205 /* Canceller.swift */,
 			);
 			name = DataTypes;
 			sourceTree = "<group>";
@@ -243,6 +247,7 @@
 				D642BDB823A9FE4500396732 /* ViewController.swift in Sources */,
 				D642BDDC23AA137C00396732 /* BoardView.swift in Sources */,
 				D642BDB423A9FE4500396732 /* AppDelegate.swift in Sources */,
+				155CBE1A2453FDA700EF6205 /* Canceller.swift in Sources */,
 				155CBE142453FD0900EF6205 /* FileIOError.swift in Sources */,
 				D642BDB623A9FE4500396732 /* SceneDelegate.swift in Sources */,
 			);
@@ -255,6 +260,7 @@
 				155CBE152453FD0900EF6205 /* FileIOError.swift in Sources */,
 				D642BDCB23A9FE4700396732 /* ReversiTests.swift in Sources */,
 				155CBE182453FD7600EF6205 /* DiskPlacementError.swift in Sources */,
+				155CBE1B2453FDA700EF6205 /* Canceller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
