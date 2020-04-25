@@ -33,34 +33,3 @@ public class DiskView: UIView {
         context.fillEllipse(in: bounds)
     }
 }
-
-extension Disk {
-    fileprivate var uiColor: UIColor {
-        switch self {
-        case .dark: return UIColor(named: "DarkColor")!
-        case .light: return UIColor(named: "LightColor")!
-        }
-    }
-    
-    fileprivate var cgColor: CGColor {
-        uiColor.cgColor
-    }
-    
-    fileprivate var name: String {
-        switch self {
-        case .dark: return "dark"
-        case .light: return "light"
-        }
-    }
-    
-    fileprivate init(name: String) {
-        switch name {
-        case Disk.dark.name:
-            self = .dark
-        case Disk.light.name:
-            self = .light
-        default:
-            preconditionFailure("Illegal name: \(name)")
-        }
-    }
-}
