@@ -24,6 +24,8 @@
 		155CBE49245402B300EF6205 /* DiskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155CBE46245402B300EF6205 /* DiskView.swift */; };
 		15F63FCD2454103F00FD5554 /* Reversi+DiskCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F63FCC2454103F00FD5554 /* Reversi+DiskCounter.swift */; };
 		15F63FCE2454103F00FD5554 /* Reversi+DiskCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F63FCC2454103F00FD5554 /* Reversi+DiskCounter.swift */; };
+		15F63FD02454126E00FD5554 /* Reversi+Flipper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F63FCF2454126E00FD5554 /* Reversi+Flipper.swift */; };
+		15F63FD12454126E00FD5554 /* Reversi+Flipper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F63FCF2454126E00FD5554 /* Reversi+Flipper.swift */; };
 		D642BDB423A9FE4500396732 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D642BDB323A9FE4500396732 /* AppDelegate.swift */; };
 		D642BDB623A9FE4500396732 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D642BDB523A9FE4500396732 /* SceneDelegate.swift */; };
 		D642BDB823A9FE4500396732 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D642BDB723A9FE4500396732 /* ViewController.swift */; };
@@ -54,6 +56,7 @@
 		155CBE45245402B300EF6205 /* CellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		155CBE46245402B300EF6205 /* DiskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiskView.swift; sourceTree = "<group>"; };
 		15F63FCC2454103F00FD5554 /* Reversi+DiskCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reversi+DiskCounter.swift"; sourceTree = "<group>"; };
+		15F63FCF2454126E00FD5554 /* Reversi+Flipper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reversi+Flipper.swift"; sourceTree = "<group>"; };
 		D642BDB023A9FE4500396732 /* Reversi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reversi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D642BDB323A9FE4500396732 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D642BDB523A9FE4500396732 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				15F63FCC2454103F00FD5554 /* Reversi+DiskCounter.swift */,
+				15F63FCF2454126E00FD5554 /* Reversi+Flipper.swift */,
 			);
 			path = Reversi;
 			sourceTree = "<group>";
@@ -282,6 +286,7 @@
 				D642BDB823A9FE4500396732 /* ViewController.swift in Sources */,
 				D642BDB423A9FE4500396732 /* AppDelegate.swift in Sources */,
 				155CBE272453FF2D00EF6205 /* Env.swift in Sources */,
+				15F63FD02454126E00FD5554 /* Reversi+Flipper.swift in Sources */,
 				155CBE372453FFCB00EF6205 /* Canceller.swift in Sources */,
 				155CBE302453FF8F00EF6205 /* Disk.swift in Sources */,
 				155CBE49245402B300EF6205 /* DiskView.swift in Sources */,
@@ -300,6 +305,7 @@
 				155CBE312453FF8F00EF6205 /* Disk.swift in Sources */,
 				155CBE2F2453FF8F00EF6205 /* FileIOError.swift in Sources */,
 				15F63FCE2454103F00FD5554 /* Reversi+DiskCounter.swift in Sources */,
+				15F63FD12454126E00FD5554 /* Reversi+Flipper.swift in Sources */,
 				155CBE332453FF8F00EF6205 /* DiskPlacementError.swift in Sources */,
 				D642BDCB23A9FE4700396732 /* ReversiTests.swift in Sources */,
 				155CBE352453FF8F00EF6205 /* Player.swift in Sources */,
