@@ -1,3 +1,4 @@
+import RxSwift
 import UIKit
 
 class ViewController: UIViewController {
@@ -25,6 +26,8 @@ class ViewController: UIViewController {
     private var isAnimating: Bool { animationCanceller != nil }
     
     private var playerCancellers: [Disk: Canceller] = [:]
+
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,12 +84,16 @@ extension ViewController {
 
                 completion?(isFinished)
 
-                try? GameActionDispatcher.saveGame(
+                GameActionDispatcher.saveGame(
                     currentTurn: self.turn,
                     boardView: self.boardView,
-                    playerControls: self.playerControls
+                    playerCodeList: Disk.sides.map { self.playerControls[$0.index].selectedSegmentIndex.description }
                 )
-                self.updateCountLabels()
+                    .observeOn(MainScheduler.instance)
+                    .subscribe(onSuccess: { [weak self] in
+                        self?.updateCountLabels()
+                    })
+                    .disposed(by: self.disposeBag)
             }
         } else {
             DispatchQueue.main.async { [weak self] in
@@ -96,13 +103,16 @@ extension ViewController {
                     self.boardView.setDisk(disk, atX: x, y: y, animated: false)
                 }
                 completion?(true)
-                try? GameActionDispatcher.saveGame(
+                GameActionDispatcher.saveGame(
                     currentTurn: self.turn,
                     boardView: self.boardView,
-                    playerControls: self.playerControls
+                    playerCodeList: Disk.sides.map { self.playerControls[$0.index].selectedSegmentIndex.description }
                 )
-
-                self.updateCountLabels()
+                    .observeOn(MainScheduler.instance)
+                    .subscribe(onSuccess: { [weak self] in
+                        self?.updateCountLabels()
+                    })
+                    .disposed(by: self.disposeBag)
             }
         }
     }
@@ -142,20 +152,17 @@ extension ViewController {
     func newGame() {
         boardView.reset()
         turn = .dark
-        
-        for playerControl in playerControls {
-            playerControl.selectedSegmentIndex = Player.manual.rawValue
-        }
+
+        playerControls.forEach { $0.selectedSegmentIndex = Player.manual.rawValue }
 
         updateMessageViews()
         updateCountLabels()
 
-        try? GameActionDispatcher.saveGame(
+        GameActionDispatcher.saveGame(
             currentTurn: turn,
             boardView: boardView,
-            playerControls: playerControls
+            playerCodeList: Disk.sides.map { playerControls[$0.index].selectedSegmentIndex.description }
         )
-
     }
     
     /// プレイヤーの行動を待ちます。
@@ -293,20 +300,22 @@ extension ViewController {
     @IBAction func changePlayerControlSegment(_ sender: UISegmentedControl) {
         let side: Disk = Disk(index: playerControls.firstIndex(of: sender)!)
 
-        try? GameActionDispatcher.saveGame(
+        GameActionDispatcher.saveGame(
             currentTurn: turn,
             boardView: boardView,
-            playerControls: playerControls
+            playerCodeList: Disk.sides.map { playerControls[$0.index].selectedSegmentIndex.description }
         )
-
-
-        if let canceller = playerCancellers[side] {
-            canceller.cancel()
-        }
-        
-        if !isAnimating, side == turn, case .computer = Player(rawValue: sender.selectedSegmentIndex)! {
-            playTurnOfComputer()
-        }
+            .observeOn(MainScheduler.instance)
+            .subscribe(onSuccess: { [weak self] in
+                guard let self = self else { return }
+                if let canceller = self.playerCancellers[side] {
+                    canceller.cancel()
+                }
+                if !self.isAnimating, side == self.turn, case .computer = Player(rawValue: sender.selectedSegmentIndex)! {
+                    self.playTurnOfComputer()
+                }
+            })
+            .disposed(by: disposeBag)
     }
 }
 

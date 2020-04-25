@@ -7,13 +7,15 @@
 //
 
 import Foundation
+import RxSwift
 
 enum ReversiRepository {
-    static func saveGame(data: String) throws {
+    static func saveGame(data: String) -> Single<Void> {
         do {
             try data.write(toFile: path, atomically: true, encoding: .utf8)
+            return .just(())
         } catch let error {
-            throw FileIOError.read(path: path, cause: error)
+            return .error(FileIOError.read(path: path, cause: error))
         }
     }
 }
