@@ -489,12 +489,3 @@ extension ViewController {
         updateCountLabels()
     }
 }
-
-// MARK: Additional types
-
-extension ViewController {
-    enum Player: Int {
-        case manual = 0
-        case computer = 1
-    }
-}
