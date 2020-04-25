@@ -15,8 +15,6 @@ enum GameActionDispatcher {
     static func saveGame(currentTurn: Disk?, boardView: BoardView, playerControls: [UISegmentedControl]) throws {
         mainStore.dispatch(GameAction.saveGame(currentTurn, boardView, playerControls))
 
-        // TODO: 後で隠蔽
-
         var output: String = ""
         output += currentTurn.symbol
         Disk.sides.forEach { output += playerControls[$0.index].selectedSegmentIndex.description }
@@ -29,10 +27,6 @@ enum GameActionDispatcher {
             output += "\n"
         }
 
-        do {
-            try output.write(toFile: path, atomically: true, encoding: .utf8)
-        } catch let error {
-            throw FileIOError.read(path: path, cause: error)
-        }
+        try ReversiRepository.saveGame(data: output)
     }
 }
